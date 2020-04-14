@@ -1,8 +1,8 @@
 /* global $, Stripe */
 //Document ready.
-$(document).on ('turbolinks:load', function (){
+$(document).on('turbolinks:load', function (){
   var theForm = $('#pro_form');
-  var submitBtn = $('#form-singup-btn');
+  var submitBtn = $('#form-signup-btn');
   
   //Set Stripe public key.
   Stripe.setPublishableKey( $('meta[name="stripe-key"]').attr('content') );
@@ -25,7 +25,7 @@ $(document).on ('turbolinks:load', function (){
       //Validate card number.
       if(!Stripe.card.validateCardNumber(ccNum)) {
         error = true;
-        alert ('The credit card number appears to be invalid');
+        alert('The credit card number appears to be invalid');
       }
       
       //Validate card security code.
